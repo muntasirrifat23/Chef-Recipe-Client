@@ -10,12 +10,17 @@ import Home from './Component/Home';
 import Blog from './Component/blog/Blog';
 import Login from './Component/Login/Login';
 import Register from './Component/Register/Register';
+import Main from './Component/Main/Main';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<Home></Home>,
     children:[
+      {
+        path:'/',
+        element:<Main></Main>
+      },
       {
         path:'/blog',
         element:<Blog></Blog>
