@@ -8,7 +8,7 @@ const Login = () => {
     return (
         <Container className='login'>
             <form> 
-                <h1>Please Login:</h1>
+                <h1 className='text-info'>Please Login:</h1>
                 <div className="mb-3">
                     <label  className="form-label">Email address</label>
                     <input type="email" name='email' className="form-control" required id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Enter your Email' />
@@ -22,7 +22,7 @@ const Login = () => {
 
                 <button type="submit" className="btn btn-primary">Submit</button> <br></br>
                 <div >
-                <Link to="/register" className='text-danger-emphasis'>Don't Have Account? Please Register</Link>
+                <Link to="/register" className='text-info'>Don't Have Account? Please Register</Link>
                 </div>
                 
             </form>
