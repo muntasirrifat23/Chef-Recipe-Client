@@ -1,0 +1,28 @@
+.q1{
+    background-color: rgb(110, 137, 197);
+    padding: 15px;
+    border-radius: 10px;
+}
+.q2{
+    background-color: rgb(87, 184, 87);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.q3{
+    background-color: rgb(217, 103, 160);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.q4{
+    background-color: rgb(226, 91, 91);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.blog{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
