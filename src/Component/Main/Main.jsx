@@ -2,11 +2,18 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Page from '../Page/Page';
 import HomeLeft from '../HomeLeft/HomeLeft';
+import Caro from '../Caro/Caro';
 
 const Main = () => {
     return (
         <div>
-             <Row  className='register'>
+            <div>
+                <Caro></Caro>
+            </div>
+
+
+            <div>
+            <Row  className='register'>
                 
                 <Col lg={6}>
                     <HomeLeft></HomeLeft>
@@ -17,6 +24,8 @@ const Main = () => {
 
                 </Col>
             </Row>
+            </div>
+             
         </div>
     );
 };

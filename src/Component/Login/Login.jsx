@@ -55,11 +55,9 @@ const Login = () => {
 
                 <p className='text-danger'>{error}</p>
 
-                <Link to='/'>
+                
                 <button type="submit" className="btn btn-primary">Submit</button> <br></br>
-                </Link>
                
-
                 <div>
                 <Link to="/register" className='text-info'>Don't Have Account? Please Register</Link>
                 </div>
