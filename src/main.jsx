@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   createBrowserRouter,
+  Navigate,
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path:'/chef',
         element: <Chef></Chef>
+      },
+      {
+        path:'*',
+        element: <Navigate to='/404' />
       }
     ]
   }

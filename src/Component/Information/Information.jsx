@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Info.css'
 import { Link } from 'react-router-dom';
 import { Button, Card, Col, Row, Toast } from 'react-bootstrap';
@@ -10,9 +10,13 @@ import 'react-toastify/dist/ReactToastify.css';
 const Information = ({ item }) => {
     const { pic_, name, experience, recipe, likes, title, description } = item;
 
+    const [disabled, setDisabled] = useState(false);
+
     const notify = () => {
         toast("Is it your favourite food!")
-    }
+        setDisabled(true);
+    };
+
 
 
     return (
@@ -49,8 +53,8 @@ const Information = ({ item }) => {
                                     <p>{description}..........
                                         <div className='d-flex justify-content-between'>
                                         <Link to="/chef"><div><Button className='bg-danger' >View More</Button></div></Link>
-
-                                        <Button onClick={notify} className='bg-warning text-black' > Favourite <FaAllergies/>
+{/* Toast */}
+                                        <Button disabled={disabled} onClick={notify} className='bg-warning text-black' > Favourite <FaAllergies/>
                                         <ToastContainer /></Button>
                                         
                                         </div>
