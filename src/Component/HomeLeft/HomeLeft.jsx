@@ -18,7 +18,7 @@ const HomeLeft = () => {
                 key={detail.id}
                 detail={detail}>
 
-                    </Left>)
+                </Left>)
             }
         </div>
 

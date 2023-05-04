@@ -1,12 +1,19 @@
 import React from 'react';
 import './Info.css'
 import { Link } from 'react-router-dom';
-import { Button, Card, Col, Row } from 'react-bootstrap';
-import { FaStarHalf, FaStar, FaRegStar, FaAllergies } from 'react-icons/fa';
+import { Button, Card, Col, Row, Toast } from 'react-bootstrap';
+import {  FaStar, FaRegStar, FaAllergies } from 'react-icons/fa';
 import Rating from 'react-rating';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Information = ({ item }) => {
     const { pic_, name, experience, recipe, likes, title, description } = item;
+
+    const notify = () => {
+        toast("Is it your favourite food!")
+    }
+
 
     return (
         <div className='info'>
@@ -43,7 +50,9 @@ const Information = ({ item }) => {
                                         <div className='d-flex justify-content-between'>
                                         <Link to="/chef"><div><Button className='bg-danger' >View More</Button></div></Link>
 
-                                        <Button className='bg-warning text-black'> Favourite <FaAllergies/></Button>
+                                        <Button onClick={notify} className='bg-warning text-black' > Favourite <FaAllergies/>
+                                        <ToastContainer /></Button>
+                                        
                                         </div>
                                     </p>
                                 </div>
