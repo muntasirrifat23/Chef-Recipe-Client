@@ -10,8 +10,6 @@ const Header = () => {
         <div>
             <div className='header d-flex'>
                 <div className='d-flex align-items-center'>
-                    
-                    <img src={i1} alt=""  className='roundedCircle' />
                 
                 <h1 className='danger text-danger'>Chef's Table</h1>
                 </div>

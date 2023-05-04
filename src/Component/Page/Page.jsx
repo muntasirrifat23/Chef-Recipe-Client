@@ -6,7 +6,7 @@ const Page = () => {
   const [items, setItem] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/data')
+    fetch('https://assignment-10-express-muntasirrifat23.vercel.app/data')
       .then(res => res.json())
       .then(data => setItem(data))
       .catch(err => console.log(err))

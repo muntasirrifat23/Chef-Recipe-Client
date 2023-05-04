@@ -4,7 +4,7 @@ import Left from '../Left/Left';
 const HomeLeft = () => {
     const[details,setDetails]= useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/')
+        fetch('https://assignment-10-express-muntasirrifat23.vercel.app/')
           .then(res => res.json())
           .then(data => setDetails(data))
           .catch(err => console.log(err))
