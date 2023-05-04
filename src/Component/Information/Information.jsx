@@ -12,10 +12,12 @@ const Information = ({ item }) => {
         <div className='info'>
             <Row xs={1} md={2} lg={3}>
                 <Col>
-                    <Card >
+                    <Card>
                         <div className="col">
                             <div className="card">
+                                <div className='info-pic'>
                                 <img src={pic_} className="card-img-top" alt="..." />
+                                </div>
                                 <div className="card-body">
                                     <h3 className='text-success'>Food: {title}</h3>
                                     <h5 className="card-title text-secondary">Chef Name: {name}</h5>
