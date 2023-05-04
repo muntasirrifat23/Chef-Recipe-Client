@@ -8,23 +8,33 @@ import { AuthContest } from '../Auth/AuthProvider';
 const Login = () => {
     const {signIn}= useContext(AuthContest);
     const formRef = useRef(null);
-    const[error,setError]=useState()
-    
+    const[error, setError]= useState('');
+
     const handleLog= (event)=>{
         event.preventDefault();
+        setError('')
         const from = event.target;
         const email= from.email.value;
         const password= from.password.value;
         console.log(email,password);
+
+        if(password.length<6){
+            setError('Invalid Password');
+             return;
+        }
         formRef.current.reset();
+
         signIn(email,password)
         .then(result=>{
             const myUser = result.user;
             console.log(myUser);
+            setError('');
         })
         .catch(err=>{
-            console.log(err);
+            console.log(err.message);
+            setError(err.message);
         })
+       
 
     }
 
@@ -42,13 +52,15 @@ const Login = () => {
                     <label className="form-label">Password</label>
                     <input type="password" name='password' className="form-control" required placeholder='Enter Your Password' id="exampleInputPassword1" />
                 </div>
-                <p>{error}</p>
 
+                <p className='text-danger'>{error}</p>
+
+                <Link to='/'></Link>
                 <button type="submit" className="btn btn-primary">Submit</button> <br></br>
+                
                 <div >
                 <Link to="/register" className='text-info'>Don't Have Account? Please Register</Link>
                 </div>
-                
             </form>
         </Container>
     );
