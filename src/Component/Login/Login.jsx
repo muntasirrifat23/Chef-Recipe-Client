@@ -34,7 +34,7 @@ const Login = () => {
             console.log(err.message);
             setError(err.message);
         })
-       
+      
 
     }
 
@@ -55,10 +55,12 @@ const Login = () => {
 
                 <p className='text-danger'>{error}</p>
 
-                <Link to='/'></Link>
+                <Link to='/'>
                 <button type="submit" className="btn btn-primary">Submit</button> <br></br>
-                
-                <div >
+                </Link>
+               
+
+                <div>
                 <Link to="/register" className='text-info'>Don't Have Account? Please Register</Link>
                 </div>
             </form>

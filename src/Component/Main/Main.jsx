@@ -8,11 +8,11 @@ const Main = () => {
         <div>
              <Row  className='register'>
                 
-                <Col lg={3}>
+                <Col lg={6}>
                     <HomeLeft></HomeLeft>
                 </Col>
 
-                <Col lg={9}>
+                <Col lg={6}>
                 <Page></Page>
 
                 </Col>

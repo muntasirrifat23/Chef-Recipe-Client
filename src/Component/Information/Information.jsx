@@ -2,7 +2,7 @@ import React from 'react';
 import './Info.css'
 import { Link } from 'react-router-dom';
 import { Button, Card, Col, Row } from 'react-bootstrap';
-import { FaStarHalf, FaStar, FaRegStar } from 'react-icons/fa';
+import { FaStarHalf, FaStar, FaRegStar, FaAllergies } from 'react-icons/fa';
 import Rating from 'react-rating';
 
 const Information = ({ item }) => {
@@ -10,7 +10,8 @@ const Information = ({ item }) => {
 
     return (
         <div className='info'>
-            <Row xs={1} md={2} lg={3}>
+            {/*  xs={1} md={2} lg={3} */}
+            <Row>
                 <Col>
                     <Card>
                         <div className="col">
@@ -39,7 +40,11 @@ const Information = ({ item }) => {
                                     </div>
 
                                     <p>{description}..........
+                                        <div className='d-flex justify-content-between'>
                                         <Link to="/chef"><div><Button className='bg-danger' >View More</Button></div></Link>
+
+                                        <Button className='bg-warning text-black'> Favourite <FaAllergies/></Button>
+                                        </div>
                                     </p>
                                 </div>
                             </div>

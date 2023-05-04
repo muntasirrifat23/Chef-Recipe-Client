@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './HomeLeft.css'
+import Left from '../Left/Left';
 const HomeLeft = () => {
+    const[details,setDetails]= useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/')
+          .then(res => res.json())
+          .then(data => setDetails(data))
+          .catch(err => console.log(err))
+      }, [])
     return (
-        <div >
+        <div className='mb-3'>
+            
             <h1 className='left'>Chef's Information</h1>
+            {
+                details.map(detail=><Left 
+                key={detail.id}
+                detail={detail}>
 
-            <div className="card mb-3 w-100">
-                <img src="..." className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
+                    </Left>)
+            }
         </div>
 
     );
