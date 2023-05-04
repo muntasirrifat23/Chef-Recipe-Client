@@ -9,11 +9,11 @@ const Register = () => {
 
     const handleRegister= (event)=>{
         event.preventDefault();
-        const form = event.target;
-        const name= form.name.value;
-        const email= form.email.value;
-        const password= form.password.value;
-        const file= form.file.value;
+        const from = event.target;
+        const name= from.name.value;
+        const email= from.email.value;
+        const password= from.password.value;
+        const file= from.file.value;
         console.log(name,email,password,file);
         formRef.current.reset();
         createUser(email,password)
@@ -27,7 +27,8 @@ const Register = () => {
 
     }
     return (
-        <div className='register'>
+        <div className='justify-content-center'>
+            <div className='register w-75'>
             <form onSubmit={handleRegister} ref={formRef}>
                 <h1 className='text-success'>Please Registration:</h1>
                 <div className="mb-3">
@@ -59,6 +60,8 @@ const Register = () => {
             </form>
 
         </div>
+        </div>
+        
     );
 };
 

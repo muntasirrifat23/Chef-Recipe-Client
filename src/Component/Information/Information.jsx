@@ -26,7 +26,7 @@ const Information = ({ item }) => {
                                         <h6>{experience} </h6>
 
                                         <div className='align-items-center'>
-                                        <h6>{likes}
+                                        <h6 className='align-items-center'>{likes}
                                             <Rating placeholderRating={likes}
                                                 readonly
                                                 emptySymbol={<FaRegStar />}
