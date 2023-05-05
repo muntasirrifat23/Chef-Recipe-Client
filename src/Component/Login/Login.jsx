@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import './Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContest } from '../Auth/AuthProvider';
 
 
@@ -9,6 +9,10 @@ const Login = () => {
     const {signIn}= useContext(AuthContest);
     const formRef = useRef(null);
     const[error, setError]= useState('');
+    const location= useLocation();
+    const frm = location.state?.frm?.pathname||'/chef';
+
+    let navigate= useNavigate();
 
     const handleLog= (event)=>{
         event.preventDefault();
@@ -17,6 +21,7 @@ const Login = () => {
         const email= from.email.value;
         const password= from.password.value;
         console.log(email,password);
+       
 
         if(password.length<6){
             setError('Invalid Password');
@@ -24,16 +29,20 @@ const Login = () => {
         }
         formRef.current.reset();
 
-        signIn(email,password)
+        if(email,password){
+            signIn(email,password)
         .then(result=>{
-            const myUser = result.user;
-            console.log(myUser);
+            const mUser = result.user;
+            console.log(mUser);
+            navigate(frm, {replace:true});
             setError('');
         })
         .catch(err=>{
             console.log(err.message);
             setError(err.message);
         })
+        }
+        
       
 
     }

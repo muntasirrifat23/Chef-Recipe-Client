@@ -14,6 +14,7 @@ import Register from './Component/Register/Register';
 import Main from './Component/Main/Main';
 import Chef from './Component/Chef/Chef';
 import AuthProvider from './Component/Auth/AuthProvider';
+import PrivateRouter from './Component/PrivateRouter';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/chef',
-        element: <Chef></Chef>
+        element:<PrivateRouter><Chef></Chef></PrivateRouter> 
       },
       {
         path:'*',

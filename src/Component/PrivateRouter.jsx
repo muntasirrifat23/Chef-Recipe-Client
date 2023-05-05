@@ -1,15 +1,24 @@
 import React, { useContext } from 'react';
 import { AuthContest } from './Auth/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
 
-const location= useLocation();
+
 const PrivateRouter = ({children}) => {
-    const {user}= useContext(AuthContest);
-    // if(user){
-    //     return children;
-    // }
+    const {user, loading}= useContext(AuthContest);
+    const location= useLocation();
+    if(user){
+        return children;
+    }
+    if(loading){
+        return (
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          );
+    }
     return (
-       <Navigate to='/login' replace state={{from:location}}></Navigate>
+       <Navigate state={{from:location}} to='/login' replace></Navigate>
     );
 };
 

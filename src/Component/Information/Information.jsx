@@ -20,7 +20,7 @@ const Information = ({ item }) => {
 
 
     return (
-        <div className='info'>
+        <div className='info grid grid-cols-3'>
             {/*  xs={1} md={2} lg={3} */}
             <Row>
                 <Col>
